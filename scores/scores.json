@@ -1,10 +1,10 @@
 {
   "testScores": {
     "Modify Tests": {
-      "MoTe1": 0,
-      "MoTe2": 0,
-      "MoTe3": 0,
-      "MoTe4": 0
+      "MoTe1": 1,
+      "MoTe2": 1,
+      "MoTe3": 1,
+      "MoTe4": 1
     },
     "From Scratch Tests": {
       "FrScTe1": 1,
@@ -24,8 +24,8 @@
       "FrScTe15": 1,
       "FrScTe16": 1,
       "FrScTe17": 1,
-      "FrScTe18": 0,
-      "FrScTe19": 0
+      "FrScTe18": 1,
+      "FrScTe19": 1
     }
   },
   "idToTestNameHash": {
@@ -79,8 +79,8 @@
     "src/from-scratch.spec.js > From Scratch Tests > renderNewUser - renders the new user correctly": "FrScTe19"
   },
   "humanReadable": {
-    "Modify Tests": "0/4",
-    "finalTestScore": "FINAL SCORE: 17/23",
-    "From Scratch Tests": "17/19"
+    "Modify Tests": "4/4",
+    "finalTestScore": "FINAL SCORE: 23/23",
+    "From Scratch Tests": "19/19"
   }
 }

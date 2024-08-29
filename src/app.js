@@ -27,15 +27,36 @@ export default async function app(appDiv) {
   newUserFormEl.id = 'new-user-form';
   appDiv.append(newUserFormEl);
   // Render the form!
-  // renderNewUserForm;
+  renderNewUserForm(newUserFormEl);
 
   // Fetch the books!
-  getFirstThreeFantasyBooks()
-  // const books =
+  const books = await getFirstThreeFantasyBooks()
+  console.log(books)
   // render out the books
-  renderBookList()
+  renderBookList(bookListEl, books)
 
-  // bookListEl.addEventListener('???', () => {})
+  bookListEl.addEventListener("click", async (event) => {
+    // making sure that if the clicked element is a button.
+    if (event.target.matches("button")) {
+      // Get the authors info and store it 
+      const author = await getAuthor(event.target.dataset.authorUrlKey);
+      // Render the author information?
+      renderAuthorInfo(authorInfoEl, author);
+    }
+  });
 
-  // newUserFormEl.addEventListener('???', () => {})
+
+  renderNewUserForm(newUserFormEl)
+  newUserFormEl.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const userData = new FormData(event.target)
+    const formObj = Object.fromEntries(userData)
+    const user = await createNewUser(formObj)
+    renderNewUser(newUserEl, user)
+
+  })
 }
+// bookListEl.addEventListener('???', () => {})
+
+// newUserFormEl.addEventListener('???', () => {})
+
